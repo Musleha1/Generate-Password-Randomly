@@ -97,6 +97,7 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
+
 function generatePassword() {
     var passwordLength = prompt("How many characters would you like in your password? \nPlease choose between 10 - 64 characters.");
 
@@ -117,15 +118,12 @@ function generatePassword() {
 
    if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowerCasedCharacters && !hasUpperCasedCharacters) {
     return "Your password must contain at least one character type";
-
   }
 
   var userInput = []
 
   if(specialCharacters) {
     userInput = userInput.concat(specialCharacters);
-  } else {
-    alert ("Your password will NOT have numbers")
   }
 
   if(numericCharacters) {
