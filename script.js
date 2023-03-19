@@ -39,7 +39,7 @@ function generatePassword() {
   var hasLowerCasedCharacters = confirm("Click OK if you want to include lower case characters.")
   var hasUpperCasedCharacters = confirm("Click OK if you want to include upper case characters.")
 
-   // Validate characters
+   //Validate characters
 
    if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowerCasedCharacters && !hasUpperCasedCharacters) {
     return "Your password must contain at least one character type";
