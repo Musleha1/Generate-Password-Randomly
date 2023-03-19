@@ -90,6 +90,21 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   function getPasswordOptions() {
+        var passwordLength = prompt("How many characters would you like in your password? \nPlease choose between 10 - 64 characters.");
+      
+        // Validate password length
+      
+        if (passwordLength < 10 || passwordLength > 64 || isNaN(passwordLength)) {
+          return("Invalid input! \nPassword must be 10 - 64 characters long.");
+         } else
+         { alert("Your password will be " + passwordLength + " characters long.");
+         }
+      
+        var hasSpecialCharacters = confirm("Click OK if you want to include special characters.")
+        var hasNumericCharacters = confirm("Click OK if you want to include numbers.")
+        var hasLowerCasedCharacters = confirm("Click OK if you want to include lower case characters.")
+        var hasUpperCasedCharacters = confirm("Click OK if you want to include upper case characters.")
+
   
   }
   
