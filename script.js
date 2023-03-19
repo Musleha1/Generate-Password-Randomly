@@ -67,6 +67,8 @@ function generatePassword() {
     alert("Your password must contain at least one character type."); 
   }
   
+  // Generate password
+
   var password = "";
   for(var i = 0; i < passwordLength; i++){
     password = password.concat(getRandom(userInput));
@@ -75,7 +77,6 @@ function generatePassword() {
   return password;
 
 }
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
