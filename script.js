@@ -127,32 +127,19 @@ function generatePassword() {
   }
 
   if(numericCharacters) {
-    alert("Your password will have numbers")
-    userInput = userInput.concat(numericCharacters);
-  } else {
-    alert ("Your password will NOT have numbers")
-    
+    userInput = userInput.concat(numericCharacters)
   }
 
   if(lowerCasedCharacters) {
-    alert("Your password will have lower case characters")
-    userInput = userInput.concat(lowerCasedCharacters);
-  } else {
-    alert("Your password will NOT have lower case characters")
-    
+    userInput = userInput.concat(lowerCasedCharacters);  
   }
 
   if(upperCasedCharacters) {
-    alert("Your password will have upper case characters")
     userInput = userInput.concat(upperCasedCharacters);
-  } else {
-    alert("Your password will NOT have upper case characters")
-    
   }
 
   if(specialCharacters === false && numericCharacters === false && lowerCasedCharacters === false && upperCasedCharacters === false) {
-    alert("Your password must contain at least one character type.");
-    
+    alert("Your password must contain at least one character type."); 
   }
   
   var password = "";
