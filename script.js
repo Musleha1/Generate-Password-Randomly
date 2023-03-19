@@ -88,14 +88,12 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
-
-}
 
 // Function for getting a random element from an array
-function getRandom(arr) {
 
+function getRandom(arr) {
+    var randomElement = Math.floor(Math.random() * arr.length);
+    return arr[randomElement];
 }
 
 // Function to generate password with user input
@@ -114,7 +112,60 @@ function generatePassword() {
   var hasNumericCharacters = confirm("Click OK if you want to include numbers.")
   var hasLowerCasedCharacters = confirm("Click OK if you want to include lower case characters.")
   var hasUpperCasedCharacters = confirm("Click OK if you want to include upper case characters.")
+
+   // Validate characters
+
+   if (!hasSpecialCharacters && !hasNumericCharacters && !hasLowerCasedCharacters && !hasUpperCasedCharacters) {
+    return "Your password must contain at least one character type";
+
+  }
+
+  var userInput = []
+
+  if(specialCharacters) {
+    userInput = userInput.concat(specialCharacters);
+  } else {
+    alert ("Your password will NOT have numbers")
+  }
+
+  if(numericCharacters) {
+    alert("Your password will have numbers")
+    userInput = userInput.concat(numericCharacters);
+  } else {
+    alert ("Your password will NOT have numbers")
+    
+  }
+
+  if(lowerCasedCharacters) {
+    alert("Your password will have lower case characters")
+    userInput = userInput.concat(lowerCasedCharacters);
+  } else {
+    alert("Your password will NOT have lower case characters")
+    
+  }
+
+  if(upperCasedCharacters) {
+    alert("Your password will have upper case characters")
+    userInput = userInput.concat(upperCasedCharacters);
+  } else {
+    alert("Your password will NOT have upper case characters")
+    
+  }
+
+  if(specialCharacters === false && numericCharacters === false && lowerCasedCharacters === false && upperCasedCharacters === false) {
+    alert("Your password must contain at least one character type.");
+    
+  }
+  
+  var password = "";
+  for(var i = 0; i < passwordLength; i++){
+    password = password.concat(getRandom(userInput));
+    console.log(password)
+  }
+  return password;
+
 }
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
